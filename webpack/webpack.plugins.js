@@ -11,6 +11,8 @@ exports.extraConfigs = isDev => [
     minimize: !isDev,
     debug: isDev,
     options: {
+      context: __dirname,
+      output: { path: './' }, // This has to be './' and not your output folder.
       postcss() {
         return [
           postcssFlexbugsFixes,

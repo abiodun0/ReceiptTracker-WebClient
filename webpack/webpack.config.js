@@ -14,7 +14,7 @@ const assetPath = isDev ? 'build' : 'static/dist';
 const publicPath = isDev ? `http://localhost:${+process.env.PORT}/` : null; // this would change as soon as we have the proper config path setup
 module.exports = createConfig([
   entryPoint({
-    app: ['./src/index', './src/client'],
+    app: ['bootstrap-loader', './src/index', './src/client'],
   }),
   setOutput({
     path: path.resolve(__dirname, `../${assetPath}`),
