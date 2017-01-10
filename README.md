@@ -4,6 +4,7 @@ This is a sample react app setup showcasing webpack 2, webpack blocks and hot mo
 #### Prereqs
   1. You need to have [nvm](https://github.com/creationix/nvm) or [n](https://github.com/tj/n)installed on your system
   2. npm install -g n
+  
 #### Setup
 
 ```bash
