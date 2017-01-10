@@ -12,13 +12,13 @@ app.set('view engine', 'ejs');
 // This should be the default route for testing html template
 // before being converted to react compoonent
 app.get('/templates/:templateName', (req, res) => {
-  const templateName = req.params.templateName
+  const templateName = req.params.templateName;
   res.render(templateName, { title: 'Hey', assets: webpackIsomorphicTools.assets() });
 });
 
 // Wild card route for the default react component
 app.get('*', (req, res) => {
-  const sampleComponent = ( < Sample / > );
+  const sampleComponent = (<Sample />);
   res.status(200).send(`<!doctype html>\n${
   renderToString(<Html assets={webpackIsomorphicTools.assets()} component={sampleComponent} />)}`);
 });
