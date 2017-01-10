@@ -1,0 +1,65 @@
+// Contents
+//
+// Off Canvas Nav Setup
+// Sidebar Nav
+
+// Off Canvas Nav Setup
+//
+// .body-wrap => all items
+// .container-wrap => all standard view content and components visible on the page
+// .sidebar-wrap => all sidebar or off canvas content and components
+// The width of .sidebar-wrap and the translateX on .body-wrap.nav-out should be the same value.
+
+.body-wrap {
+  transition: transform .25s ease-in-out;
+  position: relative;
+
+  &.nav-out {
+    transform: translateX(-75%); // Should be same value as .sidebar-wrap's width
+    transition: $default-transition;
+
+    @include media-breakpoint-up(sm) {
+      transform: translateX(-85%); // Should be same value as .sidebar-wrap's width
+    }
+  }
+}
+
+// Prevents scroll on standard view content when navigation is expanded
+.nav-out .container-wrap {
+  box-shadow: $box-shadow-right-lg;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+//
+// Side Nav
+//
+
+// Sidebar Navigation
+.sidebar-wrap {
+  overflow-y: scroll;
+  transform: translateX(100%);
+  @include position(a, 0 0 null null);
+  @include size(75%, 100%); // Should be same width as .body-wrap.nav-out's translateX()
+
+  @include media-breakpoint-up(sm) {
+    @include size(85%, 100%); // Should be same width as .body-wrap.nav-out's translateX()
+  }
+}
+.sidebar-wrap a {
+  border-bottom: 1px solid rgba($black, .1);
+  display: block;
+  padding-top: $spacer * 1.5;
+  padding-right: $spacer;
+  padding-bottom: $spacer * 1.5;
+  padding-left: $spacer;
+
+  &:last-of-type {
+    border-bottom: 1px solid transparent;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-right: $spacer * 2;
+    padding-left: $spacer * 2;
+  }
+}

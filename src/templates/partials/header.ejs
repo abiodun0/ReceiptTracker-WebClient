@@ -1,0 +1,8 @@
+    <meta charset="utf-8">
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <% Object.keys(styles).forEach(function(entry){ %>
+        <link rel="stylesheet" type="text/css" href="<%= styles[entry] %>">
+    <% }) %>

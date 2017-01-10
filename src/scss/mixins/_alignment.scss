@@ -1,0 +1,32 @@
+//
+// Alignment
+//
+
+// Vertically center elements
+@mixin vertical-align($parent-height, $element-height) {
+  margin-top: (($parent-height - $element-height) / 2);
+  margin-bottom: (($parent-height - $element-height) / 2);
+}
+
+@mixin vertical-align-padding($container-height, $element-height) {
+  padding-top: ($container-height - $element-height) / 2;
+  padding-bottom: ($container-height - $element-height) / 2;
+}
+
+@mixin vertical-center($position: relative) {
+  @if $position == relative {
+    position: $position;
+    top: 50%;
+    transform: translate(0,-50%);
+  } @else {
+    transform: translate(-50%,-50%);
+    @include position(abs, 50% null null 50%);
+  }
+}
+
+@mixin center-align() {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}

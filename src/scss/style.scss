@@ -1,0 +1,111 @@
+//
+// Frontend SCSS
+//
+// Bootstrap Default Imports
+//
+// These are Bootstrap files that we haven't changed at all. If you change anything in these partials create a new partial in the correct root directory and change the path in here.
+// Beware: We are using Bootsrap v4.0.0-alpha.5 so remember to note that when reading their docs
+// Custom Zebra Partials
+//
+// These are modified BS files or completely custom partials. If you modify any Bootstrap partial for any reason leave the original version alone and create a duplicate and path to it similar to how we do below.
+// Core variables
+@import 'globals/variables.scss';
+//
+// Bootstrap Default
+//
+// Mixin Toggles:
+@mixin box-shadow($shadow...) {
+  @if $enable-shadows {
+    box-shadow: $shadow;
+  }
+}
+
+@mixin transition($transition...) {
+  @if $enable-transitions {
+    transition: $transition;
+  }
+}
+
+// Mixins: Utilities
+@import "bootstrap/mixins/breakpoints";
+@import "bootstrap/mixins/hover";
+@import "bootstrap/mixins/image";
+@import "bootstrap/mixins/badge";
+@import "bootstrap/mixins/resize";
+@import "bootstrap/mixins/screen-reader";
+@import "bootstrap/mixins/size";
+@import "bootstrap/mixins/reset-text";
+@import "bootstrap/mixins/text-emphasis";
+@import "bootstrap/mixins/text-hide";
+@import "bootstrap/mixins/text-truncate";
+@import "bootstrap/mixins/transforms";
+@import "bootstrap/mixins/visibility";
+// Mixins: Components
+@import "bootstrap/mixins/alert";
+@import "bootstrap/mixins/buttons";
+@import "bootstrap/mixins/cards";
+@import "bootstrap/mixins/pagination";
+@import "bootstrap/mixins/lists";
+@import "bootstrap/mixins/list-group";
+@import "bootstrap/mixins/nav-divider";
+@import "bootstrap/mixins/forms";
+@import "bootstrap/mixins/table-row";
+// Mixins: Skins
+@import "bootstrap/mixins/background-variant";
+@import "bootstrap/mixins/border-radius";
+@import "bootstrap/mixins/gradients";
+// Mixins: Layout
+@import "bootstrap/mixins/clearfix";
+@import "bootstrap/mixins/grid-framework";
+@import "bootstrap/mixins/grid";
+@import "bootstrap/mixins/float";
+// Reset and dependencies
+@import "bootstrap/normalize";
+// Componenets
+@import "bootstrap/transitions";
+@import "bootstrap/dropdown";
+@import "bootstrap/button-group";
+@import "bootstrap/input-group";
+@import "bootstrap/custom-forms";
+// @import "bootstrap/nav";
+@import "bootstrap/card";
+@import "bootstrap/breadcrumb";
+@import "bootstrap/pagination";
+@import "bootstrap/badge";
+@import "bootstrap/jumbotron";
+@import "bootstrap/alert";
+@import "bootstrap/progress";
+@import "bootstrap/media";
+@import "bootstrap/list-group";
+@import "bootstrap/responsive-embed";
+@import "bootstrap/close";
+// Utilities
+@import "bootstrap/utilities/align";
+@import "bootstrap/utilities/background";
+@import "bootstrap/utilities/borders";
+@import "bootstrap/utilities/clearfix";
+@import "bootstrap/utilities/display";
+@import "bootstrap/utilities/flex";
+@import "bootstrap/utilities/float";
+@import "bootstrap/utilities/position";
+@import "bootstrap/utilities/screenreaders";
+@import "bootstrap/utilities/sizing";
+@import "bootstrap/utilities/spacing";
+@import "bootstrap/utilities/text";
+@import "bootstrap/utilities/visibility";
+//
+// Zebra Styles
+//
+// Mixins
+@import "mixins/alignment";
+@import "mixins/positioning";
+// Components
+@import "components/navbar";
+@import "components/navigation";
+// Utilities
+@import 'utilities/background';
+// To do: Add this to reboot
+body {
+  background: blue;
+  overflow-X: hidden;
+}
