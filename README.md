@@ -1,20 +1,17 @@
-# Desktop App
-The Zebra desktop app revamp! Get setup below
+# Sample React App Setup
+This is a sample react app setup showcasing webpack 2, webpack blocks and hot module reloading
 
 #### Prereqs
-  1. You need to have [nvm](https://github.com/creationix/nvm) installed on your system
-  1. Add this project to `synced_projects` in `vagrant/local_settings.rb`.
-
+  1. You need to have [nvm](https://github.com/creationix/nvm) or [n](https://github.com/tj/n)installed on your system
+  2. npm install -g n
 #### Setup
 
 ```bash
-git clone git@github.com:insurancezebra/frontend.git
-cd frontend
-nvm install
-nvm use
+git clone git@github.com:abiodun0/webpack2-react-server.git
+cd webpack2-react-server
+n 6.9.2
 npm install
 npm start
 ```
 # SCSS
-
-Import only partials from Bootstrap that aren't modified in any way. If you change anything on a Bootstrap partial duplicate it and bring it in to own SCSS partials and change how it's imported from `style.scss`.
+Bootstrap scss is being used. Import the needed part of bootstrap with .bootstraprc config file.
