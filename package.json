@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild:webpack": "rm -rf static/dist && rm -rf build",
     "build:webpack": "NODE_ENV=production webpack --config ./webpack/webpack.config.js --display-error-details",
+    "prebuild:server": "rm -rf dist",
     "build:server": "babel ./src -d ./dist -D",
     "start": "NODE_ENV=development PORT=9006 webpack-dev-server --config ./webpack/webpack.config.js & NODE_ENV=development PORT=9007 node ./rootServer.js",
     "pre-lint": "(cd \"./node_modules/\" && pwd)",
