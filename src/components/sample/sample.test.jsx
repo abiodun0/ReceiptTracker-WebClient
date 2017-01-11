@@ -9,7 +9,7 @@ describe('Sample Component', () => {
     const sample = shallow(<Sample />);
     expect(sample.text()).to.contain('This is a sample Component Test Button');
   });
-  xit('should trigger checkTest event on button click', () => {
+  it('should trigger checkTest event on button click', () => {
     sinon.spy(Sample.prototype, 'checkTest');
     const sample = mount(<Sample />);
     sample.find('button').simulate('click');

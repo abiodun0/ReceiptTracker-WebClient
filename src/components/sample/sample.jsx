@@ -18,8 +18,6 @@ export default class Sample extends Component {
       <div>
         <p className="home">This is a sample Component</p>
         <button onClick={this.checkTest}> Test Button 1</button>
-        <button onClick={this.checkTest}> Test Button 2 </button>
-        <button onClick={this.checkTest}> Test Button 3</button>
       </div>
     );
   }

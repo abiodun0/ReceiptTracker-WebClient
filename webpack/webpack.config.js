@@ -30,14 +30,17 @@ module.exports = createConfig([
     'process.env.NODE_ENV': nodeEnv,
   }),
   env('test', [
-    devServer({
-      noInfo: true,
-    }),
     customConfig({
       externals: {
         'react/addons': true,
         'react/lib/ExecutionEnvironment': true,
         'react/lib/ReactContext': true,
+      },
+      node: {
+        // karma watches test/unit/index.js
+        // webpack watches dependencies of test/unit/index.js
+        fs: 'empty',
+        net: 'empty',
       },
     }),
   ]),
