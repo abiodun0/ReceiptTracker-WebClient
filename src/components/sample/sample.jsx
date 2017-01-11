@@ -6,6 +6,9 @@ export default class Sample extends Component {
   constructor() {
     super();
     this.checkTest = this.checkTest.bind(this);
+    this.state = {
+      testState: 'this are sample data',
+    };
   }
   checkTest() {
     console.log('sample components.', this.props);

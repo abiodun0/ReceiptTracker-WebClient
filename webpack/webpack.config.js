@@ -1,5 +1,5 @@
 const path = require('path');
-const { addPlugins, createConfig, defineConstants, env, entryPoint, setOutput, sourceMaps, performance } = require('@webpack-blocks/webpack2');
+const { addPlugins, createConfig, defineConstants, env, entryPoint, setOutput, sourceMaps, performance, customConfig } = require('@webpack-blocks/webpack2');
 const babel = require('@webpack-blocks/babel6');
 const devServer = require('@webpack-blocks/dev-server2');
 const cssModules = require('@webpack-blocks/css-modules');
@@ -29,6 +29,18 @@ module.exports = createConfig([
   defineConstants({
     'process.env.NODE_ENV': nodeEnv,
   }),
+  env('test', [
+    devServer({
+      noInfo: true,
+    }),
+    customConfig({
+      externals: {
+        'react/addons': true,
+        'react/lib/ExecutionEnvironment': true,
+        'react/lib/ReactContext': true,
+      },
+    }),
+  ]),
   env('development', [
     devServer({
       port: +process.env.PORT,
