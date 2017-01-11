@@ -43,6 +43,11 @@ module.exports = createConfig([
         net: 'empty',
       },
     }),
+    performance({
+      // Increase performance budget thresholds for test mode to avoid unnecssary webpack logs
+      maxAssetSize: 22500000,
+      maxEntrypointSize: 22500000,
+    }),
   ]),
   env('development', [
     devServer({
