@@ -1,1 +1,1 @@
-export App from './App'; // eslint-disable-line 
+export App from './App';
