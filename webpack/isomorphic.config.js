@@ -20,7 +20,6 @@ module.exports = {
         'png',
         'gif',
       ],
-      parser: WebpackIsomorphicToolsPlugin.url_loader_parser,
     },
     fonts: {
       extensions: [
@@ -29,7 +28,6 @@ module.exports = {
         'ttf',
         'eot',
       ],
-      parser: WebpackIsomorphicToolsPlugin.url_loader_parser,
     },
     svg: {
       extension: 'svg',

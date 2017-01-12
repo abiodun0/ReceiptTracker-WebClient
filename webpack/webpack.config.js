@@ -37,8 +37,6 @@ module.exports = createConfig([
         'react/lib/ReactContext': true,
       },
       node: {
-        // karma watches test/unit/index.js
-        // webpack watches dependencies of test/unit/index.js
         fs: 'empty',
         net: 'empty',
       },
