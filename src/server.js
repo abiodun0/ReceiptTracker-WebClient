@@ -3,7 +3,7 @@ import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import Html from './helpers/Html';
-import { Sample } from './components';
+import { App } from './containers';
 
 const app = express();
 app.set('views', `${__dirname}/templates`);
@@ -18,7 +18,7 @@ app.get('/templates/:templateName', (req, res) => {
 
 // Wild card route for the default react component
 app.get('*', (req, res) => {
-  const sampleComponent = (<Sample />);
+  const sampleComponent = (<App />);
   res.status(200).send(`<!doctype html>\n${
   renderToString(<Html assets={webpackIsomorphicTools.assets()} component={sampleComponent} />)}`);
 });
