@@ -29,6 +29,14 @@ module.exports = createConfig([
   defineConstants({
     'process.env.NODE_ENV': nodeEnv,
   }),
+  customConfig({
+    resolve: {
+      modules: [
+        'src',
+        'node_modules',
+      ],
+    },
+  }),
   env('test', [
     customConfig({
       externals: {

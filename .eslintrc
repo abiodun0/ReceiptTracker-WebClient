@@ -19,6 +19,18 @@
       "peerDependencies": false
     }]
   },
+  "settings": {
+    "import/parser": "babel-eslint",
+    "import/resolver":{
+      "webpack": {
+        "config": {
+          "resolve" : {
+            "modules": ["node_modules", "src"]
+          }
+        }
+        }
+    }
+  },
   "globals": {
     "__DEVELOPMENT__": true,
     "__CLIENT__": true,
