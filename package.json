@@ -92,6 +92,7 @@
     "webpack-dev-server": "^2.2.0-rc.0"
   },
   "dependencies": {
+    "app-module-path": "2.2.0",
     "ejs": "^2.5.5",
     "express": "^4.14.0",
     "react": "^15.4.2",
