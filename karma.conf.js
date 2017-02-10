@@ -1,24 +1,25 @@
 const webpackConfig = require('./webpack/webpack.config.js');
 
-module.exports = function (config) {
+module.exports = (config) => {
   config.set({
-    browsers: ['Chrome'], // run in Chrome
-    singleRun: true, // just run once by default
+    browsers: ['PhantomJS'], // run in Chrome
+    singleRun: false, // just run once by default
     frameworks: ['mocha', 'chai-sinon'], // use the mocha test framework
     files: [
       'tests.webpack.js', // Test files
     ],
     preprocessors: {
-      'tests.webpack.js': ['webpack', 'sourcemap'], // preprocess with webpack and our sourcemap loader
+      'tests.webpack.js': ['webpack', 'sourcemap', 'coverage'], // preprocess with webpack and our sourcemap loader
     },
-    reporters: ['mocha', 'coverage'], // report results in this format
+    reporters: ['mocha', 'coverage-istanbul'], // report results in this format
     webpack: webpackConfig,
     webpackServer: {
       noInfo: true,
     },
-    coverageReporter: {
-      type: 'lcov',
-      dir: 'coverage',
+    coverageIstanbulReporter: {
+      reports: ['html', 'text-summary', 'lcov'],
+      dir: './coverage', // output directory
+      fixWebpackSourcePaths: true,
     },
   });
 };

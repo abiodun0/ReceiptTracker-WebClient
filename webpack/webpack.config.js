@@ -44,6 +44,16 @@ module.exports = createConfig([
         'react/lib/ExecutionEnvironment': true,
         'react/lib/ReactContext': true,
       },
+      module: {
+        loaders: [
+          {
+            test: /\.jsx?$/,
+            exclude: /(node_modules)/,
+            loader: 'istanbul-instrumenter-loader',
+            enforce: 'post',
+          },
+        ],
+      },
       node: {
         fs: 'empty',
         net: 'empty',
