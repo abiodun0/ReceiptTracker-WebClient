@@ -1,3 +1,4 @@
+require('dotenv').config(); // eslint-disable-line
 const path = require('path');
 const { addPlugins, createConfig, defineConstants, env, entryPoint, setOutput, sourceMaps, performance, customConfig } = require('@webpack-blocks/webpack2');
 const babel = require('@webpack-blocks/babel6');
@@ -11,7 +12,7 @@ const plugins = require('./webpack.plugins');
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isDev = nodeEnv === 'development';
 const assetPath = isDev ? 'build' : 'static/dist';
-const publicPath = isDev ? `http://localhost:${+process.env.PORT}/` : null; // this would change as soon as we have the proper config path setup
+const publicPath = isDev ? `http://localhost:${+process.env.PORT + 1}/` : null; // this would change as soon as we have the proper config path setup
 module.exports = createConfig([
   entryPoint({
     app: ['bootstrap-loader', './src/index', './src/client'],
@@ -67,7 +68,7 @@ module.exports = createConfig([
   ]),
   env('development', [
     devServer({
-      port: +process.env.PORT,
+      port: +process.env.PORT + 1,
       inline: true,
       hot: true, // disabling open for now. till a viable solution is can be achieved
     }),

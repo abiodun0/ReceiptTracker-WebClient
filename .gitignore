@@ -7,3 +7,4 @@ bundle-stats.json
 static/dist
 dist
 coverage
+.env

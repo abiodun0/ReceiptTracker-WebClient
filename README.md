@@ -11,7 +11,8 @@ git clone git@github.com:abiodun0/webpack2-react-server.git
 cd webpack2-react-server
 n 6.9.2
 npm install
-npm start
+cp .env.sample .env # This is a one time thing
+npm run dev
 ```
 # SCSS
 Bootstrap scss is being used. Import the needed part of bootstrap with .bootstraprc config file.

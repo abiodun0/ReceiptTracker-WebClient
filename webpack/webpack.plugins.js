@@ -5,9 +5,16 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 const isoConfig = require('./isomorphic.config');
 const postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const DotEnv = require('dotenv-webpack');
+const path = require('path');
 
 const webpackIsomorphicToolsPlugin = new IsomorphicPlugin(isoConfig);
 exports.extraConfigs = isDev => [
+  new DotEnv({
+    path: path.resolve(__dirname, '../.env'), // if not simply .env
+    safe: false, // lets load the .env.example file as well
+    systemvars: true,
+  }),
   new webpack.ProvidePlugin({
     $: 'jquery',
     jQuery: 'jquery',
@@ -55,11 +62,11 @@ exports.development = [
     {
         // browse to http://localhost:3000/ during development
       host: 'localhost',
-      port: 9008,
+      port: +process.env.PORT + 2,
         // proxy the Webpack Dev Server endpoint
         // (which should be serving on http://localhost:3100/)
         // through BrowserSync
-      proxy: 'http://localhost:9007',
+      proxy: `http://localhost:${+process.env.PORT}`,
       reload: false,
     }),
   webpackIsomorphicToolsPlugin.development(),
